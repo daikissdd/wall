@@ -1,0 +1,13 @@
+{
+  "name": "loadjs",
+  "homepage": "https://github.com/chriso/load.js",
+  "_release": "3acd55abe6",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "3acd55abe69660685da71ff5fd463af2bc8a4387"
+  },
+  "_source": "git@github.com:chriso/load.js.git",
+  "_target": "*",
+  "_originalSource": "git@github.com:chriso/load.js.git"
+}
