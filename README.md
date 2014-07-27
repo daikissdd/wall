@@ -82,5 +82,3 @@
 - clip
 - item
 - nina
-- mugs
-- nina2
