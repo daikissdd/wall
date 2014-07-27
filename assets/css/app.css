@@ -1,0 +1,27 @@
+    #header-close {
+        margin-right: 10px;
+    }
+	#page-header {
+        margin: 100px 0 80px 0;
+        text-align: center;
+    }
+
+    #page-header button {
+        margin-top: 80px;
+        font-size: 18px;
+    }
+
+    .modal-footer span {
+        display: block;
+        padding-top: 10px;
+        font-size: 10px;
+    }
+
+    footer p {
+	    text-align: center;
+	    padding: 100px 0;
+	    background-color: #545454;
+	    color: white;
+	    font-size: 22px;
+	    margin: 100px 0 0 0;
+    }

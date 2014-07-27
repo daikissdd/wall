@@ -1,0 +1,16 @@
+{
+  "name": "angular.bootstrap.notifications",
+  "module": "angular.bootstrap.notifications",
+  "version": "0.0.2",
+  "private": false,
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "3.8.6",
+    "gulp-concat": "2.2.0",
+    "gulp-jshint": "1.6.1",
+    "gulp-ngmin": "0.1.2",
+    "gulp-uglify": "0.2.1",
+    "jshint-stylish": "0.1.5"
+  }
+}

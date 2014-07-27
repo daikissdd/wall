@@ -1,0 +1,42 @@
+{
+  "name": "angular-facebook-insight",
+  "version": "0.6.4",
+  "homepage": "https://github.com/bahaaldine/angular-facebook-insight",
+  "main": "dist/angular-facebook-insight.js",
+  "authors": [
+    "Bahaaldine AZARMI <bahaaldine@gmail.com>",
+    "Mayssem Bouzazi <mayssem.bouzazi@telecom-sudparis.eu>",
+    "Li Xu <li.xu@telecom-sudparis.eu>"
+  ],
+  "description": "angular component that renders your Facebook page insights",
+  "keywords": [
+    "angular",
+    "facebook",
+    "social",
+    "insight"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "d3": "~3.4.6",
+    "nvd3": "~1.1.15-beta",
+    "angularjs-nvd3-directives": "~0.0.7",
+    "font-awesome": "4.0.x"
+  },
+  "_release": "0.6.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.6.4",
+    "commit": "8700a41f7473f26937bdb65198aa310d5f51e061"
+  },
+  "_source": "git://github.com/bahaaldine/angular-facebook-insight.git",
+  "_target": "~0.6.4",
+  "_originalSource": "angular-facebook-insight",
+  "_direct": true
+}
