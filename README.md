@@ -82,3 +82,4 @@
 - clip
 - item
 - nina
+- mugs
