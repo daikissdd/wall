@@ -81,3 +81,4 @@
 - postit
 - clip
 - item
+- nina
