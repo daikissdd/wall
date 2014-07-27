@@ -1,0 +1,38 @@
+{
+  "name": "angular-bootstrap-notifications",
+  "version": "0.0.2",
+  "homepage": "http://http://preececonsulting.com/angular-notifications/",
+  "authors": [
+    "Richie Preece <richie.preece@gmail.com>"
+  ],
+  "description": "Angular UI-Bootstrap Global Notification Center",
+  "keywords": [
+    "Angular",
+    "UI-Bootstrap",
+    "Bootstrap",
+    "Notification",
+    "Alert"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "angular-ui-bootstrap": "~0.11.0"
+  },
+  "_release": "0.0.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.2",
+    "commit": "af66dd49b84f187ecf2b3e3eb0e557cc65852604"
+  },
+  "_source": "git://github.com/preececonsulting/angular-notifications.git",
+  "_target": "~0.0.2",
+  "_originalSource": "angular-bootstrap-notifications",
+  "_direct": true
+}

@@ -1,23 +1,39 @@
 (function() {
 
-	var bowerPath = 'assets/bower_components/';
-	var jsPath = 'assets/js/';
+	var bower = 'assets/bower_components/';
+	var js = 'assets/js/';
+	var ctrl = js + 'controllers/';
+	var conf = js + 'config/';
+	var service = js + 'services/';
+	var directive = js + 'directives/';
 
 	load(
-	    bowerPath + 'lodash/dist/lodash.min.js',
-	    bowerPath + 'jquery/dist/jquery.min.js'
+	    bower + 'lodash/dist/lodash.min.js',
+	    bower + 'jquery/dist/jquery.min.js',
+	    bower + 'aws-sdk-js/dist/aws-sdk.min.js'
 	).then(
-		bowerPath + 'angular/angular.min.js'
+		bower + 'angular/angular.min.js',
+		bower + 'sass-bootstrap/dist/js/bootstrap.min.js'
 	).then(
-		bowerPath + 'angular-animate/angular-animate.min.js',
-		bowerPath + 'angular-touch/angular-touch.min.js',
-		bowerPath + 'angular-ui-bootstrap-bower/ui-bootstrap-tpls.min.js'
+		bower + 'angular-animate/angular-animate.min.js',
+		bower + 'angular-route/angular-route.min.js',
+		bower + 'angular-cookies/angular-cookies.min.js',
+		bower + 'angular-touch/angular-touch.min.js',
+		bower + 'angular-ui-bootstrap-bower/ui-bootstrap-tpls.min.js'
 	).then(
-		jsPath + 'app1.js',
-		jsPath + 'app2.js',
-		jsPath + 'app3.js'
+		bower + 'angular-bootstrap-validation/dist/angular-bootstrap-validation.js',
+		bower + 'angular-bootstrap-notifications/notifications.min.js'
+	).then(
+		js + 'app.js'
+	).then(
+		conf + 'app.js'
+	).then(
+		directive + 'app.js',
+		service + 'app.js'
+	).then(
+		ctrl + 'app-ctrl.js'
 	).thenRun(function () {
-	   console.log('Loaded.');
+	   console.log('JS Loaded.');
 	});
 
 })();

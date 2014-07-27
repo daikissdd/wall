@@ -1,0 +1,28 @@
+{
+  "name": "angular-bootstrap-notifications",
+  "version": "0.0.2",
+  "homepage": "http://http://preececonsulting.com/angular-notifications/",
+  "authors": [
+    "Richie Preece <richie.preece@gmail.com>"
+  ],
+  "description": "Angular UI-Bootstrap Global Notification Center",
+  "keywords": [
+    "Angular",
+    "UI-Bootstrap",
+    "Bootstrap",
+    "Notification",
+    "Alert"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "angular-ui-bootstrap": "~0.11.0"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "angular-file-uploader",
+  "version": "0.3.0",
+  "authors": [
+    "Jose Luis Rivas <me@ghostbar.co>"
+  ],
+  "description": "Factory for File Upload",
+  "main": "index.js",
+  "keywords": [
+    "file",
+    "upload",
+    "angular",
+    "factory",
+    "service"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "homepage": "https://github.com/ghostbar/angular-file-uploader",
+  "_release": "0.3.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.3.0",
+    "commit": "b9275202f726c1317bab2fbf606072c8453e1e03"
+  },
+  "_source": "git://github.com/ghostbar/angular-file-uploader.git",
+  "_target": "~0.3.0",
+  "_originalSource": "angular-file-uploader",
+  "_direct": true
+}
