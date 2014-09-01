@@ -22,16 +22,27 @@
 		bower + 'angular-ui-bootstrap-bower/ui-bootstrap-tpls.min.js'
 	).then(
 		bower + 'angular-bootstrap-validation/dist/angular-bootstrap-validation.js',
-		bower + 'angular-bootstrap-notifications/notifications.min.js'
+		bower + 'angular-bootstrap-notifications/notifications.min.js',
+		bower + 'angularLocalStorage/src/angularLocalStorage.js'
 	).then(
 		js + 'app.js'
 	).then(
 		conf + 'app.js'
 	).then(
 		directive + 'app.js',
-		service + 'app.js'
+		service + 'wall.js',
+		service + 'card.js',
+		service + 'modal.js'
 	).then(
 		ctrl + 'app-ctrl.js'
+	).then(
+		ctrl + 'modal-ctrl.js'
+	).then(
+		ctrl + 'home-ctrl.js'
+	).then(
+		ctrl + 'wall-ctrl.js'
+	).then(
+		ctrl + 'card-ctrl.js'
 	).thenRun(function () {
 	   console.log('JS Loaded.');
 	});

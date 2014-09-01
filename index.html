@@ -12,12 +12,11 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/app.css" />
 </head>
 
-<body>
-	<div class="alert alert-success alert-dismissable" ng-include="'assets/html/alert.html'"></div>
-	<div ng-view></div>
+<body ng-controller="appCtrl" ng-cloak>
+	<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" class="margin0">{{alert.msg}}</alert>
+	<div ng-view class="margin0"></div>
 	<footer ng-include="'assets/html/footer.html'" class="row"></footer>
     <script src="assets/bower_components/loadjs/load-min.js"></script>
     <script src="assets/js/init.js"></script>

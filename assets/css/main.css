@@ -1,4 +1,4 @@
-/* normalize.css v2.1.3 | MIT License | git.io/normalize */
+/*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 article,
 aside,
 details,
@@ -4997,3 +4997,106 @@ td.visible-print {
   th.hidden-print,
   td.hidden-print {
     display: none !important; } }
+.test {
+  background-color: #ebebeb;
+  background-color: #f0f0f0;
+  background-color: #f9f9f9;
+  background-color: #efefef;
+  background-color: #e9e9e9;
+  background-color: #ebebeb; }
+
+.margin0 {
+  margin: 0; }
+
+.pointer:hover {
+  cursor: pointer; }
+
+.table-row {
+  display: table;
+  text-align: left; }
+
+.table-cell {
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle; }
+
+.table-cell-top {
+  padding-top: 2px;
+  display: table-cell;
+  text-align: left;
+  vertical-align: top; }
+
+html, body {
+  background-color: #f3f3f3; }
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important; }
+
+.modal-lg {
+  width: 700px; }
+
+.modal-footer span {
+  display: block;
+  padding-top: 10px;
+  font-size: 10px; }
+
+#top-url {
+  margin-top: 0; }
+
+#header-close {
+  margin-right: 10px; }
+
+#page-header {
+  margin: 100px 0 80px 0;
+  text-align: center; }
+  #page-header button {
+    margin-top: 80px;
+    font-size: 18px; }
+
+.card-modal-description {
+  padding-left: 10px; }
+
+.create-card {
+  display: table-cell;
+  font-size: 28px;
+  vertical-align: middle; }
+  .create-card:hover {
+    opacity: .7; }
+
+.card-link {
+  color: white; }
+
+.card {
+  background-color: white;
+  margin-top: 10px;
+  min-height: 48px;
+  color: gray;
+  padding: 10px;
+  border: 1px solid #d1d1d1;
+  box-sizing: padding-box; }
+  .card:hover {
+    cursor: pointer;
+    opacity: .9; }
+
+.card-link {
+  background-color: #f3f3f3; }
+
+.create-card-wrap {
+  background-color: white;
+  margin-top: 10px;
+  min-height: 78px;
+  color: gray;
+  display: table;
+  border: 2px solid white;
+  text-align: center; }
+  .create-card-wrap:hover {
+    cursor: pointer;
+    opacity: .9; }
+
+footer p {
+  text-align: center;
+  padding: 100px 0;
+  background-color: #545454;
+  color: white;
+  font-size: 22px;
+  margin: 100px 0 0 0; }

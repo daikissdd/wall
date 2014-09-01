@@ -1,18 +1,7 @@
-<div
-	class="modal fade in"
-	id="modal-container-287627"
-	role="dialog"
-	aria-labelledby="myModalLabel"
-	aria-hidden="false">
-
-	<!-- modal dialog -->
-	<div class="modal-dialog">
-
-	    <div class="modal-content">
-
-			<!-- modal header -->
+	<script type="text/ng-template" id="modal.html">
+    			<!-- modal header -->
 	        <div class="modal-header">
-	            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	            <button class="close" ng-click="cancel()">×</button>
 	            <h4 class="modal-title" id="myModalLabel">Wallを作成</h4>
 	        </div>
 	        <!-- modal header -->
@@ -23,7 +12,12 @@
 	                <div class="row">
 	                    <div class="col-md-12">
 	                        <label for="wall-title">タイトルを入力</label>
-	                        <input type="text" class="form-control" id="wall-title" placeholder="タイトルを入力">
+	                        <input
+	                        	type="text"
+	                        	class="form-control"
+	                        	id="wall-title"
+	                        	placeholder="タイトルを入力"
+	                        	ng-model="wall.title" />
 	                    </div>
 	                </div>
 	                <br>
@@ -32,11 +26,9 @@
 	                        <label for="wall-pw" class="hidden-xs">
 	                            パスワードを設定する
 	                            <span
-	                                class="glyphicon glyphicon-question-sign"
-	                                id="popover"
-	                                data-toggle="popover"
-	                                title="パスワードについて"
-	                                data-content="パスワードを設定すると秘密のWallが作成できます。"></span>
+	                            	popover="パスワードを設定すると秘密のWallが作成できます。"
+	                            	popover-trigger="mouseenter"
+	                            	class="glyphicon glyphicon-question-sign"></span>
 	                        </label>
 
 	                        <label for="wall-pw" class="hidden-sm hidden-md hidden-lg">
@@ -46,7 +38,11 @@
 
 	                        <div class="input-group">
 	                            <span class="input-group-addon">PW</span>
-	                            <input type="text" class="form-control" id="wall-pw" placeholder="パスワードを入力（英数小文字2文字以上）">
+	                            <input
+	                            	type="text"
+	                            	class="form-control"
+	                            	id="wall-pw" placeholder="パスワードを入力（英数小文字2文字以上）"
+	                            	ng-model="wall.password" />
 	                        </div>
 	                    </div>
 	                </div>
@@ -57,12 +53,8 @@
 			<!-- modal footer -->
 	        <div class="modal-footer" style="text-align: center">
 	            <button type="button" class="btn btn-default hide" data-dismiss="modal">Close</button>
-	            <button type="button" class="btn btn-primary">この内容で作成する</button>
+	            <button type="button" class="btn btn-primary" ng-click="create($event)">この内容で作成する</button>
 	            <span>※Wallは30日間アクセスしないと自動的に消えてしまいます</span>
 	        </div>
 	        <!-- modal footer -->
-
-	    </div>
-	</div>
-	<!-- modal dialog -->
-</div>
+</script>

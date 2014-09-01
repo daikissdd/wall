@@ -20,7 +20,8 @@
     "angular-file-uploader": "~0.3.0",
     "angular-bootstrap-notifications": "~0.0.2",
     "angular-login": "~0.0.5",
-    "angular-facebook-insight": "~0.6.4"
+    "angular-facebook-insight": "~0.6.4",
+    "angularLocalStorage": "~0.1.7"
   },
   "devDependencies": {}
 }

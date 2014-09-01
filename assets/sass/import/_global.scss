@@ -1,0 +1,17 @@
+html, body {
+	background-color: $global_bg_color;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.modal-lg {
+  width: 700px;
+}
+
+.modal-footer span {
+  display: block;
+  padding-top: 10px;
+  font-size: 10px;
+}

@@ -1,0 +1,18 @@
+.test {
+	background-color: #ebebeb;
+	background-color: #f0f0f0;
+	background-color: #f9f9f9;
+	background-color: #efefef;
+	background-color: #e9e9e9;
+	background-color: #ebebeb;
+}
+
+$global_bg_color: #F3F3F3;
+$card_bg_color: white;
+$card_color: black;
+$create-card_bg_color: white;
+$create-card_color: $card_bg_color;
+
+$base-card-height: 78px;
+$card-title-height: 48px;
+$card-url-height: $base-card-height - $card-title-height;

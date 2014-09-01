@@ -42,12 +42,25 @@
 
 機能リスト
 
-- リンクの登録
+- リンクの登録 - end
 - wallのパスワード機能
-- wallのタイトル
-- wallのURL発行
-- リンクのタイトル登録
-- リンクのディスクリプション機能
+- wallのタイトル - end
+- wallのURL発行 - end
+- リンクのタイトル登録 - end
+- リンクのディスクリプション機能 - end
+
+8/22 - modal2(wall-create, card-edit)(1.5) - popover1(wall-create-password)(0.5)
+8/23 - save card & update card(1) - send golfes spec(1)
+8/24 - card click action(1) - password page(1)
+8/25 - write code passward check system(2)
+8/26 - edit card update(1) & localstorege sync(1)
+8/27 - localstorege sync(1) & update wall page(1)
+8/28 - margin
+8/29 - heroku -push
+8/30 - all set up & html edit
+8/31 - all set up & html edit
+9/1 - open
+9/2 - margin
 
 #### ネーミング
 - Link

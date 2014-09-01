@@ -1,0 +1,45 @@
+@mixin base_card($bg_color, $color, $height) {
+    background-color: $bg_color;
+	margin-top: 10px;
+	min-height: $height;
+	color: gray;
+	&:hover {
+	  cursor: pointer;
+	  opacity: .9;
+	}
+}
+
+.card-modal-description {
+	padding-left: 10px;
+}
+
+.create-card {
+	display: table-cell;
+	font-size: 28px;
+	vertical-align: middle;
+	&:hover {
+		opacity: .7;
+	}
+}
+
+.card-link {
+  color: white;
+}
+
+.card {
+	@include base_card($card_bg_color, $card_color, $card-title-height);
+    padding: 10px;
+    border: 1px solid #d1d1d1;
+    box-sizing: padding-box;
+}
+
+.card-link {
+	background-color: $global_bg_color;
+}
+
+.create-card-wrap {
+	@include base_card($create-card_bg_color, $create-card_color, $base-card-height);
+	display: table;
+    border: 2px solid $card_bg_color;
+    text-align: center;
+}

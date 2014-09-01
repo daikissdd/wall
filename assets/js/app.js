@@ -1,11 +1,21 @@
-var App = angular.module('wall', ['ngRoute', 'ngAnimate', 'ngCookies'])
+var App = angular.module('wall', [
+	'ngRoute',
+	'ngAnimate',
+	'ngCookies',
+	'angularLocalStorage',
+	'ui.bootstrap'
+])
 .config(function($routeProvider, $locationProvider) {
 	$routeProvider
 	.when('/home', {
 		templateUrl: 'assets/views/home.html',
-		controller: 'appCtrl'
+		controller: 'homeCtrl'
 	})
-	.when('/app/:code', {
+	.when('/app/:code/', {
+		templateUrl: 'assets/views/app.html',
+		controller: 'wallCtrl'
+	})
+	.when('/app/:code/card/:card', {
 		templateUrl: 'assets/views/app.html',
 		controller: 'wallCtrl'
 	})
@@ -15,7 +25,9 @@ var App = angular.module('wall', ['ngRoute', 'ngAnimate', 'ngCookies'])
 })
 .config(function($locationProvider) {
 	$locationProvider.html5Mode(false);
-});
+}).config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
+    $httpProvider.defaults.useXDomain = true;
+}]);
 
 App.define = (function(define) {
 	return {

@@ -1,0 +1,93 @@
+<script type="text/ng-template" id="card-modal.html">
+
+	<style type="text/css">
+		.modal-title-text:hover {
+			cursor: pointer;
+			opacity: .5;
+		}
+	</style>
+
+	<!-- modal header -->
+    <div class="modal-header">
+        <button class="close" ng-click="cancel()">×</button>
+        <div ng-hide="editFlags.title">
+        	<h4 class="modal-title">
+        		<span class="modal-title-text" ng-click="toggleTitle()">{{card.title}}</span>
+        	</h4>
+        </div>
+        <h4 class="modal-title" ng-show="editFlags.title">
+        	<input type="text" ng-model="card.title" size="30" />
+        	<button ng-click="toggleTitle()" class="btn btn-default btn-sm">Save</button>
+        </h4>
+    </div>
+    <!-- modal header -->
+
+    <!-- modal body -->
+    <div class="modal-body">
+		<div class="row">
+			<div class="col-md-9">
+				<div class="row">
+					<div ng-hide="editFlags.url">
+						<div class="col-md-12 table-row">
+							<span class="glyphicon glyphicon-link table-cell-top"></span>
+							<span class="table-cell-top card-modal-description">{{card.url}}</span>
+						</div>
+						<div class="col-md-12 table-row">
+							<span class="glyphicon glyphicon-align-link table-cell-top" style="opacity:.0;"></span>
+							<span class="table-cell-top card-modal-description">
+								<small ng-click="toggleUrl()">edit link</small>
+							</span>
+						</div>
+					</div>
+
+					<div ng-show="editFlags.url">
+						<div class="col-md-12 table-row">
+							<span class="glyphicon glyphicon-link table-cell-top" style="padding-top:6px;"></span>
+							<span class="table-cell-top card-modal-description">
+								<input type="text" size="67" ng-model="card.url" />
+							</span>
+						</div>
+						<div class="col-md-12 table-row">
+							<span class="glyphicon glyphicon-align-link table-cell-top" style="opacity:.0;"></span>
+							<span class="table-cell-top card-modal-description">
+								<button class="btn btn-primary btn-xs" style="margin-top:3px;" ng-click="toggleUrl()">Save</button>
+							</span>
+						</div>
+					</div>
+
+					<div ng-hide="editFlags.description">
+						<div class="col-md-12 table-row">
+							<span class="glyphicon glyphicon-align-left table-cell-top"></span>
+							<span class="table-cell-top card-modal-description">{{card.description}}</span>
+						</div>
+						<div class="col-md-12 table-row">
+							<span class="glyphicon glyphicon-align-left table-cell-top" style="opacity:.0;"></span>
+							<span class="table-cell-top card-modal-description">
+								<small ng-click="toggleDescription()">edit description</small>
+							</span>
+						</div>
+					</div>
+					<div class="col-md-12 table-row card-modal-description-icon" ng-show="editFlags.description">
+						<span class="glyphicon glyphicon-align-left table-cell-top"></span>
+						<span class="table-cell-top card-modal-description">
+							<textarea cols="70" rows="6" ng-model="card.description"></textarea>
+							<br />
+							<button class="btn btn-primary btn-xs" style="margin-top:5px;" ng-click="toggleDescription()">Save</button>
+						</span>
+					</div>
+
+					<div class="col-md-12 table-row">
+						<span class="glyphicon glyphicon-time table-cell-top"></span>
+						<span class="table-cell-top card-modal-description">{{card.created_at}}</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div style="font-size:16px; margin-bottom:4px;">Actions</div>
+				<button class="btn btn-block">Send Mail</button>
+				<button class="btn btn-block">Delete</button>
+			</div>
+		</div>
+    </div>
+    <!-- modal body -->
+</script>
