@@ -1,13 +1,13 @@
-<div class="row">
-	<div class="latest-card margin0 pointer col-md-2" ng-repeat="card in latestCards">{{card}}</div>
-</div>
-<div class="row">
-	<div class="margin0 pointer col-md-1">latest cards</div>
-</div>
-<div class="row" ng-include="'assets/html/header.html'"></div>
-<div class="container">
-    <div class="row">
+<div class="container-fluid">
+	<div class="row latest-card" collapse="isCollapsed">
+		<div class="latest-card padding10 margin0 pointer col-xs-2" ng-repeat="card in latestCards">
+			<div class="latest-card-content" ng-click="linkCard($event, card)">{{card.title}}</div>
+		</div>
+	</div>
+	<div class="row" ng-hide="latestCards.length === 0">
+		<div class="margin0 pointer col-md-1 latest-card-nav" ng-click="toggleCollapse()">latest cards</div>
+	</div>
+	<div ng-include="'assets/html/header.html'"></div>
         <div class="col-md-12" ng-include="'assets/html/modal.html'"></div>
 		<div class="panel-group" id="panel-toppage" ng-include="'assets/html/qa.html'"></div>
-    </div>
 </div>

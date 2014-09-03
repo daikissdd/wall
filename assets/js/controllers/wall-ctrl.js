@@ -1,6 +1,4 @@
-App.controller('wallCtrl', function($scope, $routeParams, Modal, Wall, Card, storage, $location) {
-
-	$scope.closeAllAlert();
+App.controller('wallCtrl', function($scope, $routeParams, Modal, Wall, Card, Latest, storage, $location) {
 
 	if (!$routeParams.code) $location.path('home').replace();
 
@@ -8,6 +6,7 @@ App.controller('wallCtrl', function($scope, $routeParams, Modal, Wall, Card, sto
 
 	Wall.get($scope.wall.wall_code, function(res) {
 		_.extend($scope.wall, res.data.wall);
+		Latest.push($scope.wall);
 		$scope.card = Card.init($scope.wall.id, $routeParams.card);
 	});
 
@@ -20,7 +19,23 @@ App.controller('wallCtrl', function($scope, $routeParams, Modal, Wall, Card, sto
 		$location.path(path).replace();
 	};
 
+	$scope.navLinks = {home: '#/'+$scope.app.homeUrl()};
+
+	$scope.wallTitleEditFlag = false;
+	$scope.wallTitleEdit = function() {
+		return $scope.wallTitleEditFlag = !$scope.wallTitleEditFlag;
+	};
+
+	$scope.wallTitleEditSave = function() {
+		// save
+		Wall.update($scope.wall.wall_code, $scope.wall, function(res) {
+			console.log(res);
+		});
+		return $scope.wallTitleEdit();
+	};
 	_.once(function() {
+		$scope.closeAllAlert();
+
 		if (_.isUndefined($routeParams.card)) return false;
 		Card.get($routeParams.card, function(res) {
 			_.extend($scope.card, res.data.card);

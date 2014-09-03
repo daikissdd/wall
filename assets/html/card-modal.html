@@ -1,12 +1,5 @@
 <script type="text/ng-template" id="card-modal.html">
 
-	<style type="text/css">
-		.modal-title-text:hover {
-			cursor: pointer;
-			opacity: .5;
-		}
-	</style>
-
 	<!-- modal header -->
     <div class="modal-header">
         <button class="close" ng-click="cancel()">×</button>
@@ -30,12 +23,12 @@
 					<div ng-hide="editFlags.url">
 						<div class="col-md-12 table-row">
 							<span class="glyphicon glyphicon-link table-cell-top"></span>
-							<span class="table-cell-top card-modal-description">{{card.url}}</span>
+							<span class="table-cell-top padding-left10">{{card.url}}</span>
 						</div>
 						<div class="col-md-12 table-row">
 							<span class="glyphicon glyphicon-align-link table-cell-top" style="opacity:.0;"></span>
-							<span class="table-cell-top card-modal-description">
-								<small ng-click="toggleUrl()">edit link</small>
+							<span class="table-cell-top padding-left10">
+								<small ng-click="toggleUrl()" class="pointer">edit link</small>
 							</span>
 						</div>
 					</div>
@@ -43,13 +36,13 @@
 					<div ng-show="editFlags.url">
 						<div class="col-md-12 table-row">
 							<span class="glyphicon glyphicon-link table-cell-top" style="padding-top:6px;"></span>
-							<span class="table-cell-top card-modal-description">
+							<span class="table-cell-top padding-left10">
 								<input type="text" size="67" ng-model="card.url" />
 							</span>
 						</div>
 						<div class="col-md-12 table-row">
 							<span class="glyphicon glyphicon-align-link table-cell-top" style="opacity:.0;"></span>
-							<span class="table-cell-top card-modal-description">
+							<span class="table-cell-top padding-left10">
 								<button class="btn btn-primary btn-xs" style="margin-top:3px;" ng-click="toggleUrl()">Save</button>
 							</span>
 						</div>
@@ -58,18 +51,18 @@
 					<div ng-hide="editFlags.description">
 						<div class="col-md-12 table-row">
 							<span class="glyphicon glyphicon-align-left table-cell-top"></span>
-							<span class="table-cell-top card-modal-description">{{card.description}}</span>
+							<span class="table-cell-top padding-left10">{{card.description}}</span>
 						</div>
 						<div class="col-md-12 table-row">
 							<span class="glyphicon glyphicon-align-left table-cell-top" style="opacity:.0;"></span>
-							<span class="table-cell-top card-modal-description">
-								<small ng-click="toggleDescription()">edit description</small>
+							<span class="table-cell-top padding-left10">
+								<small ng-click="toggleDescription()" class="pointer">edit description</small>
 							</span>
 						</div>
 					</div>
-					<div class="col-md-12 table-row card-modal-description-icon" ng-show="editFlags.description">
+					<div class="col-md-12 table-row" ng-show="editFlags.description">
 						<span class="glyphicon glyphicon-align-left table-cell-top"></span>
-						<span class="table-cell-top card-modal-description">
+						<span class="table-cell-top padding-left10">
 							<textarea cols="70" rows="6" ng-model="card.description"></textarea>
 							<br />
 							<button class="btn btn-primary btn-xs" style="margin-top:5px;" ng-click="toggleDescription()">Save</button>
@@ -78,7 +71,7 @@
 
 					<div class="col-md-12 table-row">
 						<span class="glyphicon glyphicon-time table-cell-top"></span>
-						<span class="table-cell-top card-modal-description">{{card.created_at}}</span>
+						<span class="table-cell-top padding-left10">{{card.created_at}}</span>
 					</div>
 				</div>
 			</div>

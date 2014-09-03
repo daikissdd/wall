@@ -16,8 +16,8 @@
 
 <body ng-controller="appCtrl" ng-cloak>
 	<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" class="margin0">{{alert.msg}}</alert>
-	<div ng-view class="margin0"></div>
-	<footer ng-include="'assets/html/footer.html'" class="row"></footer>
+	<div ng-view></div>
+	<footer ng-include="'assets/html/footer.html'"></footer>
     <script src="assets/bower_components/loadjs/load-min.js"></script>
     <script src="assets/js/init.js"></script>
 </body>

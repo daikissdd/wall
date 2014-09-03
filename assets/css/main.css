@@ -4998,11 +4998,6 @@ td.visible-print {
   td.hidden-print {
     display: none !important; } }
 .test {
-  background-color: #ebebeb;
-  background-color: #f0f0f0;
-  background-color: #f9f9f9;
-  background-color: #efefef;
-  background-color: #e9e9e9;
   background-color: #ebebeb; }
 
 .margin0 {
@@ -5026,8 +5021,20 @@ td.visible-print {
   text-align: left;
   vertical-align: top; }
 
+.padding-left10 {
+  padding-left: 10px; }
+
+.container-fluid > .row {
+  margin: 0; }
+
 html, body {
   background-color: #f3f3f3; }
+
+a {
+  color: white; }
+  a:hover {
+    color: #f2f2f2;
+    text-decoration: none; }
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important; }
@@ -5039,6 +5046,33 @@ html, body {
   display: block;
   padding-top: 10px;
   font-size: 10px; }
+
+.latest-card {
+  background-color: #909293; }
+
+.padding10 {
+  padding: 10px; }
+
+.latest-card-content {
+  background-color: white;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 10px;
+  height: 40px;
+  border: 2px solid grey; }
+  .latest-card-content:hover {
+    background-color: #f3f3f3; }
+
+.latest-card-nav {
+  color: white;
+  background-color: #909293;
+  padding-top: 4px;
+  margin-left: 90%;
+  height: 29px;
+  border-radius: 0px 0px 10px 10px; }
+  .latest-card-nav:hover {
+    color: #f3f3f3; }
 
 #top-url {
   margin-top: 0; }
@@ -5053,18 +5087,19 @@ html, body {
     margin-top: 80px;
     font-size: 18px; }
 
-.card-modal-description {
-  padding-left: 10px; }
+.app-nav {
+  background-color: #909293; }
 
-.create-card {
-  display: table-cell;
-  font-size: 28px;
-  vertical-align: middle; }
-  .create-card:hover {
-    opacity: .7; }
-
-.card-link {
-  color: white; }
+.nav-text {
+  display: inline-block;
+  font-size: 18px;
+  color: white;
+  background-color: #9daab1;
+  margin: 5px 0px 5px 15px;
+  padding: 0px 7px;
+  text-align: center;
+  border: 1px solid #abb0b3;
+  border-radius: 5px; }
 
 .card {
   background-color: white;
@@ -5078,8 +5113,21 @@ html, body {
     cursor: pointer;
     opacity: .9; }
 
+.create-card {
+  display: table-cell;
+  font-size: 28px;
+  vertical-align: middle; }
+  .create-card:hover {
+    opacity: .7; }
+
 .card-link {
-  background-color: #f3f3f3; }
+  color: white;
+  background-color: #f3f3f3;
+  padding: 3px;
+  color: grey;
+  font-size: 12px; }
+  .card-link:hover {
+    color: black; }
 
 .create-card-wrap {
   background-color: white;
@@ -5092,6 +5140,10 @@ html, body {
   .create-card-wrap:hover {
     cursor: pointer;
     opacity: .9; }
+
+.modal-title-text:hover {
+  cursor: pointer;
+  opacity: .5; }
 
 footer p {
   text-align: center;

@@ -4,6 +4,7 @@ App.factory('Wall', function($http) {
 	var api = {
 		create: baseUrl+'index/',
 		get: baseUrl+'index/',
+		update: baseUrl+'index/',
 		checkPassword: baseUrl+'check_password/',
 	};
 
@@ -26,6 +27,15 @@ App.factory('Wall', function($http) {
 		},
 		get: function(code, callback) {
 			return $http.get(api.get+code)
+			.success(function(res) {
+				callback(res);
+			})
+			.error(function(status, res) {
+				console.log(res);
+			});
+		},
+		update: function(code, data, callback) {
+			return $http.put(api.update+code, {title: data.title}, callback)
 			.success(function(res) {
 				callback(res);
 			})

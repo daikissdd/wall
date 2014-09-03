@@ -9,8 +9,11 @@
 	}
 }
 
-.card-modal-description {
-	padding-left: 10px;
+.card {
+	@include base_card($card_bg_color, $card_color, $card-title-height);
+    padding: 10px;
+    border: 1px solid #d1d1d1;
+    box-sizing: padding-box;
 }
 
 .create-card {
@@ -24,17 +27,13 @@
 
 .card-link {
   color: white;
-}
-
-.card {
-	@include base_card($card_bg_color, $card_color, $card-title-height);
-    padding: 10px;
-    border: 1px solid #d1d1d1;
-    box-sizing: padding-box;
-}
-
-.card-link {
-	background-color: $global_bg_color;
+  background-color: $global_bg_color;
+  padding: 3px;
+  color: grey;
+  font-size: 12px;
+  &:hover {
+	  color: black;
+  }
 }
 
 .create-card-wrap {
@@ -43,3 +42,8 @@
     border: 2px solid $card_bg_color;
     text-align: center;
 }
+
+.modal-title-text:hover {
+			cursor: pointer;
+			opacity: .5;
+		}

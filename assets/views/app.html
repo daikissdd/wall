@@ -1,11 +1,25 @@
 <div class="col-md-12" ng-include="'assets/html/card-modal.html'"></div>
-<input type="" value="{{location.href}}" class="col-md-12" id="top-url" />
-<div class="container">
+
+<div class="container-fluid app-nav">
 	<div class="row">
-		<div class="col-md-10">
-			<h3>{{wall.title}}</h3>
+		<div class="col-md-8">
+			<div class="row">
+				<span class="nav-text pointer">
+					<a ng-href="{{navLinks.home}}"><span class="glyphicon glyphicon-home"></span></a>
+				</span>
+				<span class="nav-text pointer">
+					<a ng-click="wallTitleEdit()" ng-hide="wallTitleEditFlag">{{wall.title}}</a>
+					<span ng-show="wallTitleEditFlag">
+						<input type="text" ng-model="wall.title" maxlength="22" />
+						<button ng-click="wallTitleEditSave()">Save</button>
+					</span>
+				</span>
+			</div>
 		</div>
 	</div>
+</div>
+
+<div class="container-fluid">
 
 	<div class="row">
 		<div class="col-md-3">
@@ -16,7 +30,7 @@
 		<div class="col-md-3" ng-repeat="card in wall.cards">
 			<div class="card col-md-12" ng-click="openCard(card)">
 				<h4> {{card.title}} </h4>
-				<a href="{{card.url}}" target="_blank" class="card-link">
+				<a ng-href="{{card.url}}" target="_blank" class="card-link">
 					<span class="glyphicon glyphicon-link"></span>
 					<span class="card-link">{{card.url}}</span>
 				</a>

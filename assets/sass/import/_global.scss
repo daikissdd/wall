@@ -1,5 +1,17 @@
+.container-fluid > .row {
+	margin: 0;
+}
+
 html, body {
 	background-color: $global_bg_color;
+}
+
+a {
+	color: white;
+	&:hover {
+		color: #f2f2f2;
+		text-decoration: none;
+	}
 }
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
@@ -14,4 +26,37 @@ html, body {
   display: block;
   padding-top: 10px;
   font-size: 10px;
+}
+
+.latest-card {
+	background-color: $menu_gray_color;
+}
+
+.padding10 {
+	padding: 10px;
+}
+
+.latest-card-content {
+	background-color: white;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	padding: 10px;
+	height: 40px;
+	border: 2px solid grey;
+	&:hover {
+		background-color: $global_bg_color;
+	}
+}
+
+.latest-card-nav {
+	color: white;
+	background-color: $menu_gray_color;
+	padding-top: 4px;
+	margin-left: 90%;
+	height: 29px;
+	border-radius: 0px 0px 10px 10px;
+	&:hover {
+		color: $global_bg_color;
+	}
 }

@@ -1,0 +1,15 @@
+.app-nav {
+	background-color: $menu_gray_color;
+}
+
+.nav-text {
+	display: inline-block;
+	font-size: 18px;
+	color: white;
+	background-color: $menu_light_gray_color;
+	margin: 5px 0px 5px 15px;
+	padding: 0px 7px;
+	text-align: center;
+	border: 1px solid $menu_gray_border_color;
+	border-radius: 5px;
+}

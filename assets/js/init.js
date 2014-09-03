@@ -32,7 +32,8 @@
 		directive + 'app.js',
 		service + 'wall.js',
 		service + 'card.js',
-		service + 'modal.js'
+		service + 'modal.js',
+		service + 'latest.js'
 	).then(
 		ctrl + 'app-ctrl.js'
 	).then(

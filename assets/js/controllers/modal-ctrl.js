@@ -1,5 +1,6 @@
 App.controller('modalCtrl', function($scope, $modalInstance, $http, $location, Wall, storage, $modal, $log) {
 
+	$scope.wall = {};
 
   	$scope.cancel = function () {
     	$modalInstance.dismiss('cancel');
@@ -8,9 +9,9 @@ App.controller('modalCtrl', function($scope, $modalInstance, $http, $location, W
 	$scope.create = function ($event) {
 		// closeに渡したものはthenに渡せる
     	$modalInstance.close();
+
 		Wall.create($scope.wall)
 		.success(function(res) {
-			console.log(res.data.wall.wall_code);
 			$location.path('app/'+res.data.wall.wall_code).replace();
 		})
 		.error(function(res, status) {
