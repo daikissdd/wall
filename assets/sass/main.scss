@@ -1,9 +1,10 @@
 $icon-font-path: "../bower_components/sass-bootstrap/fonts/";
-@import 'lib/bootstrap';
 @import 'import/_vars';
 @import 'import/_helper';
+@import 'import/_mixin';
 @import 'import/_global';
 @import 'import/_header';
+@import 'import/_password';
 @import 'import/_wall';
 @import 'import/_card';
 @import 'import/_footer';

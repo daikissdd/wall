@@ -4,7 +4,8 @@ App.factory('Card', function($http) {
 	var api = {
 		create: baseUrl+'index/',
 		update: baseUrl+'index/',
-		get: baseUrl+'index/'
+		get: baseUrl+'index/',
+		delete: baseUrl+'index/',
 	};
 
 	var redirectUrl = _.template('app/<%= wall_cade %>/card/<%= card_cade %>');
@@ -38,6 +39,13 @@ App.factory('Card', function($http) {
 		},
 		update: function(data, callback) {
 			return $http.put(api.update+data.id, data)
+			.success(function(res) {
+				callback(res);
+			})
+			.error(function(status, res) {});
+		},
+		delete: function(id, callback) {
+			return $http.delete(api.delete+id)
 			.success(function(res) {
 				callback(res);
 			})

@@ -2,6 +2,7 @@ App.controller('appCtrl', function($scope, $http, $location, Wall, storage, $mod
 
 	$scope.wall = {};
 	$scope.card = {};
+	$scope.latestCards = [];
 
 	$scope.app = {
 		homeUrl: _.template('home/'),

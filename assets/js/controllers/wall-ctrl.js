@@ -27,10 +27,10 @@ App.controller('wallCtrl', function($scope, $routeParams, Modal, Wall, Card, Lat
 	};
 
 	$scope.wallTitleEditSave = function() {
-		// save
 		Wall.update($scope.wall.wall_code, $scope.wall, function(res) {
 			console.log(res);
 		});
+		Latest.push($scope.wall);
 		return $scope.wallTitleEdit();
 	};
 	_.once(function() {

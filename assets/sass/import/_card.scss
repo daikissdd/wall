@@ -1,12 +1,15 @@
-@mixin base_card($bg_color, $color, $height) {
-    background-color: $bg_color;
-	margin-top: 10px;
-	min-height: $height;
-	color: gray;
-	&:hover {
-	  cursor: pointer;
-	  opacity: .9;
-	}
+.create-card-wrap {
+	@include base_card($create-card_bg_color, $create-card_color, $base-card-height);
+	display: table;
+    border: 2px solid $card_bg_color;
+    text-align: center;
+}
+
+.create-card {
+	display: table-cell;
+	font-size: 28px;
+	vertical-align: middle;
+	&:hover {opacity: .7;}
 }
 
 .card {
@@ -16,34 +19,60 @@
     box-sizing: padding-box;
 }
 
-.create-card {
-	display: table-cell;
-	font-size: 28px;
-	vertical-align: middle;
-	&:hover {
-		opacity: .7;
+.modal-title {
+	padding: 0px 10px;
+	display: block;
+	overflow: auto;
+	word-break: break-all;
+	span:hover {opacity: .5;}
+}
+
+.card-description {
+	.glyphicon-align-left {
+		padding-top: 6px;
+		font-size: 13px;
+	}
+	.description-text {font-size: 16px;}
+}
+
+.url-link {
+  font-size: 14px;
+  padding: 5px;
+  background-color: $global_bg_color;
+}
+
+.url-text {
+	display: block;
+	@include no-wrap-text();
+	.glyphicon-link {width: 15px;}
+	a {
+		color: gray;
+		&:hover {color: black;}
+		.ng-binding {
+			&:hover {text-decoration: underline;}
+		}
+		small {
+			&:hover {
+				color: gray;
+				text-decoration: underline;
+			}
+		}
 	}
 }
 
-.card-link {
-  color: white;
-  background-color: $global_bg_color;
-  padding: 3px;
-  color: grey;
-  font-size: 12px;
-  &:hover {
-	  color: black;
-  }
+.url-modal-text {
+	position: relative;
+	left: 9px;
+	top: -7px;
+	.glyphicon-link {width: 20px;}
 }
 
-.create-card-wrap {
-	@include base_card($create-card_bg_color, $create-card_color, $base-card-height);
-	display: table;
-    border: 2px solid $card_bg_color;
-    text-align: center;
+.modal-footer {
+	text-align: left;
+	padding: 10px 10px 10px 20px;
+	span {
+		display: inline-block;
+		font-size: 14px;
+		margin-right: 8px;
+	}
 }
-
-.modal-title-text:hover {
-			cursor: pointer;
-			opacity: .5;
-		}

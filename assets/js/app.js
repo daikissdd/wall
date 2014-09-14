@@ -11,6 +11,10 @@ var App = angular.module('wall', [
 		templateUrl: 'assets/views/home.html',
 		controller: 'homeCtrl'
 	})
+	.when('/password', {
+		templateUrl: 'assets/views/password.html',
+		controller: 'passwordCtrl'
+	})
 	.when('/app/:code/', {
 		templateUrl: 'assets/views/app.html',
 		controller: 'wallCtrl'

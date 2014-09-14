@@ -5,9 +5,12 @@ App.controller('cardCtrl', [
 	'$location',
 	'modalParam',
 	'Card',
-	function($scope, $modalInstance, $routeParams, $location, modalParam, Card) {
+	'Mail',
+	function($scope, $modalInstance, $routeParams, $location, modalParam, Card, Mail) {
 
 	$scope.card = modalParam;
+	$scope.mail = {};
+
 	var replaceCardList = function() {
 		$location.path('app/'+$routeParams.code).replace();
 	};
@@ -44,6 +47,30 @@ App.controller('cardCtrl', [
 	$scope.toggleDescription = function() {
 		update($scope.editFlags.description, $scope.card);
 		$scope.editFlags.description = !$scope.editFlags.description;
+	};
+
+	$scope.edited = false;
+	$scope.blur = function(bool) {
+		$scope.edited = bool;
+	};
+
+	$scope.sendMail = function($event) {
+		var data = {to: $scope.mail.to, body: $scope.mail.body};
+		Mail.send($routeParams.code, data)
+		.success(function(res) {
+			$scope.mail = {};
+			$scope.blur(false);
+			console.log(res);
+		})
+		.error(function(status, res) {
+			console.log(res);
+		});
+	};
+
+	$scope.cardDelete = function($event) {
+		Card.delete($scope.card.id, function(res) {
+			$scope.cancel();
+		});
 	};
 
 }]);

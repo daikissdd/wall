@@ -1,0 +1,14 @@
+{
+  "name": "qunit-theme-burce",
+  "homepage": "https://github.com/brycedorn/qunit-theme-burce",
+  "version": "1.0.1",
+  "_release": "1.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.1",
+    "commit": "9d3c28db0f87053a9a48ae3655ac6f76d48a2aa4"
+  },
+  "_source": "git@github.com:brycedorn/qunit-theme-burce.git",
+  "_target": "*",
+  "_originalSource": "git@github.com:brycedorn/qunit-theme-burce.git"
+}

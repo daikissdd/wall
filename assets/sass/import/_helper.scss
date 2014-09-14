@@ -27,3 +27,17 @@
 .padding-left10 {
 	padding-left: 10px;
 }
+
+.padding10 {
+	padding: 10px;
+}
+
+@mixin no-wrap-text() {
+    text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.no-wrap-text {
+	@include no-wrap-text();
+}

@@ -6,9 +6,8 @@ App.controller('homeCtrl', function($scope, $http, $location, Modal, Wall, Lates
 		$scope.isCollapsed = !$scope.isCollapsed;
 	};
 
-	$scope.latestCards = [];
-
 	$scope.open = Modal.forge('modal.html', 'modalCtrl');
+
 	$scope.linkCard = function($event, card) {
 		var path = $scope.app.appUrl({wall_code: card.wall_code});
 		$location.path(path).replace();

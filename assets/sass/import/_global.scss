@@ -3,7 +3,17 @@
 }
 
 html, body {
+	min-height: 100%;
+	position: relative;
 	background-color: $global_bg_color;
+}
+
+.ng-invalid input {
+	box-shadow: inset 0px 0px 1px 1px #ffaaaa;
+	&:focus {
+		border: 1px #ffaaaa solid;
+		box-shadow: 0px 0px 1px 1px #ffaaaa;
+	}
 }
 
 a {
@@ -22,41 +32,45 @@ a {
   width: 700px;
 }
 
-.modal-footer span {
-  display: block;
-  padding-top: 10px;
-  font-size: 10px;
-}
-
 .latest-card {
 	background-color: $menu_gray_color;
-}
-
-.padding10 {
-	padding: 10px;
-}
-
-.latest-card-content {
-	background-color: white;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
-	padding: 10px;
-	height: 40px;
-	border: 2px solid grey;
-	&:hover {
-		background-color: $global_bg_color;
+	.latest-card-content {
+		background-color: white;
+		@include no-wrap-text();
+		padding: 10px;
+		height: 40px;
+		border: 2px solid grey;
+		&:hover {
+			background-color: $global_bg_color;
+		}
 	}
 }
 
 .latest-card-nav {
-	color: white;
-	background-color: $menu_gray_color;
-	padding-top: 4px;
-	margin-left: 90%;
-	height: 29px;
-	border-radius: 0px 0px 10px 10px;
-	&:hover {
-		color: $global_bg_color;
+	hr {
+		margin: 0;
+		height: 5px;
+		color: $menu_gray_color;
+		background-color: $menu_gray_color;
+		border: inherit;
 	}
+
+	div {
+		float: right;
+		margin-right: 2%;
+		color: white;
+		text-align: center;
+		background-color: $menu_gray_color;
+		width: 130px;
+		padding-top: 2px;
+		height: 26px;
+		border-radius: 0px 0px 5px 5px;
+		&:hover {
+			color: $global_bg_color;
+		}
+	}
+}
+
+.ng-pristine .alert {
+	display: none;
 }

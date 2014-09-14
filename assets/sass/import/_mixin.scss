@@ -1,0 +1,10 @@
+@mixin base_card($bg_color, $color, $height) {
+    background-color: $bg_color;
+	margin-top: 10px;
+	min-height: $height;
+	color: gray;
+	&:hover {
+	  cursor: pointer;
+	  opacity: .9;
+	}
+}

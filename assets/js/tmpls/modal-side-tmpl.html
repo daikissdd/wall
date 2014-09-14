@@ -1,0 +1,42 @@
+<span id="ng-template-modal-side">
+	<button class="{{btnclass}}" ng-click="modalSideToggle()">{{btntitle}}</button>
+	<style type="text/css">
+		.ng-template-modal-side {
+			position: fixed;
+			background-color: white;
+			width: 250px;
+			min-height: 400px;
+			padding: 10px;
+			top: 30px;
+			right: -250px;
+			z-index: 10012;
+			border-radius: 5px 5px 5px 5px;
+		}
+
+		.ng-template-modal-side h4 {
+			display: inline-block;
+			width: 150px;
+			margin: 0;
+		}
+
+		.ng-template-modal-side small {
+			display: inline-block;
+			text-align: right;
+			width: 70px;
+			margin: 0;
+		}
+
+		.ng-template-modal-side small:hover {
+			color: #0d90f6;
+			text-decoration: underline;
+			cursor: pointer;
+		}
+	</style>
+
+    <div class="ng-template-modal-side" ng-show="display">
+		<h4>{{title}}</h4>
+		<small ng-click="modalSideToggle()">{{closetext}}</small>
+		<hr />
+		<div ng-transclude></div>
+    </div>
+</span>

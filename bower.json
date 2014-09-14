@@ -21,7 +21,10 @@
     "angular-bootstrap-notifications": "~0.0.2",
     "angular-login": "~0.0.5",
     "angular-facebook-insight": "~0.6.4",
-    "angularLocalStorage": "~0.1.7"
+    "angularLocalStorage": "~0.1.7",
+    "qunit": "~1.15.0",
+    "qunit-theme-burce": "git@github.com:brycedorn/qunit-theme-burce.git",
+    "jquery.transit": "~0.9.12"
   },
   "devDependencies": {}
 }
