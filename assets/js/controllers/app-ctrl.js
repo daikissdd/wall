@@ -3,13 +3,6 @@ App.controller('appCtrl', function($scope, $http, $location, Wall, storage, $mod
 	$scope.wall = {};
 	$scope.card = {};
 	$scope.latestCards = [];
-
-	$scope.app = {
-		homeUrl: _.template('home/'),
-		appUrl: _.template('app/<%= wall_code %>'),
-		cardUrl: _.template('app/<%= wall_code %>/card/<%= card_code %>')
-	};
-
 	$scope.alerts = [];
 
 	$scope.alertSet = function(click) {

@@ -4,16 +4,17 @@ App.factory('Wall', function($http) {
 	var api = {
 		create: baseUrl+'index/',
 		get: baseUrl+'index/',
-		update: baseUrl+'index/',
+		privateGet: baseUrl+'private_get/',
 		checkPassword: baseUrl+'check_password/',
+		update: baseUrl+'index/'
 	};
 
 	var wall = {
 		id: 0,
 		title: '',
 		description: '',
+		password: '',
 		use_password_flag: 0,
-		use_password_device_flag: false,
 		cards: [],
 		wall_code: '',
 		api_code: '',
@@ -26,13 +27,20 @@ App.factory('Wall', function($http) {
 			return $http.post(api.create, data);
 		},
 		get: function(code, callback) {
-			return $http.get(api.get+code)
+			return $http.post(api.get+code)
 			.success(function(res) {
 				callback(res);
 			})
 			.error(function(status, res) {
 				console.log(res);
 			});
+		},
+		privateGet: function(code, password, callback) {
+			return $http.post(api.privateGet+code, {password: password})
+			.success(callback).error(function(status, res) { console.log(res); });
+		},
+		checkPassword: function(code, password) {
+			return $http.post(api.checkPassword+code, {password: password});
 		},
 		update: function(code, data, callback) {
 			return $http.put(api.update+code, {title: data.title}, callback)
@@ -42,9 +50,6 @@ App.factory('Wall', function($http) {
 			.error(function(status, res) {
 				console.log(res);
 			});
-		},
-		checkPassword: function(id, password) {
-			return $http.post(api.checkPassword, {id: id, password: password});
 		},
 		init: function(code) {
 			wall.wall_code = code;

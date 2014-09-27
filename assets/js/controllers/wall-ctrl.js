@@ -1,25 +1,43 @@
-App.controller('wallCtrl', function($scope, $routeParams, Modal, Wall, Card, Latest, storage, $location) {
+App.controller('wallCtrl', function($scope, $routeParams, Modal, Wall, Card, Latest, storage, Switcher, Url) {
 
-	if (!$routeParams.code) $location.path('home').replace();
+	if (!$routeParams.code) Url.home().replace();
 
 	$scope.wall = Wall.init($routeParams.code);
 
-	Wall.get($scope.wall.wall_code, function(res) {
+	var wallGetHandler = function(res) {
 		_.extend($scope.wall, res.data.wall);
 		Latest.push($scope.wall);
 		$scope.card = Card.init($scope.wall.id, $routeParams.card);
-	});
+	};
+
+	// password use switcher
+	if (Switcher.usePassword($scope.wall.wall_code)) {
+		var password = Switcher.checkStorage($scope.wall.wall_code);
+		if (_.isNull(password)) return Url.password($scope.wall.wall_code).replace();
+		Wall.privateGet($scope.wall.wall_code, password, wallGetHandler);
+	} else {
+		// get wall data
+		Wall.get($scope.wall.wall_code, wallGetHandler);
+	}
 
 	$scope.open = Modal.forge('card-modal.html', 'cardCtrl');
 	$scope.openCard = function(card) {
-		var path = Card.createUrl({
-			wall_cade: $routeParams.code,
-			card_cade: card.card_code
-		});
-		$location.path(path).replace();
+		Url.card($routeParams.code, card.card_code).replace();
 	};
 
-	$scope.navLinks = {home: '#/'+$scope.app.homeUrl()};
+	_.once(function() {
+		$scope.closeAllAlert();
+
+		if (_.isUndefined($routeParams.card)) return false;
+		Card.get($routeParams.card, function(res) {
+			_.extend($scope.card, res.data.card);
+			$scope.open($scope, 'lg', {modalParam: function() {
+				return $scope.card;
+			}});
+		});
+	})();
+
+	$scope.navLinks = {home: Url.home().url()};
 
 	$scope.wallTitleEditFlag = false;
 	$scope.wallTitleEdit = function() {
@@ -33,37 +51,12 @@ App.controller('wallCtrl', function($scope, $routeParams, Modal, Wall, Card, Lat
 		Latest.push($scope.wall);
 		return $scope.wallTitleEdit();
 	};
-	_.once(function() {
-		$scope.closeAllAlert();
-
-		if (_.isUndefined($routeParams.card)) return false;
-		Card.get($routeParams.card, function(res) {
-			_.extend($scope.card, res.data.card);
-			$scope.open($scope, 'lg', {
-				modalParam: function() {
-					return $scope.card;
-				}
-			});
-		});
-	})();
 
 	$scope.createCard = function($event) {
 		Card.create($scope.card, function(res) {
 			$scope.wall.cards.push(res.data.card);
-			var path = Card.createUrl({
-				wall_cade: $routeParams.code,
-				card_cade: res.data.card.card_code
-			});
-			$location.path(path).replace();
+			Url.card($routeParams.code, res.data.card.card_code).replace();
 		});
 	};
 
 });
-
-
-/*
-var wall = storage.get(code);
-	if (!_.isNull(wall)) {
-		$scope.wall = wall
-	};
-*/

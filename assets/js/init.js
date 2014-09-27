@@ -32,10 +32,12 @@
 	).then(
 		directive + 'copyright.js',
 		directive + 'modalside.js',
+		service + 'url.js',
 		service + 'wall.js',
 		service + 'card.js',
 		service + 'mail.js',
 		service + 'modal.js',
+		service + 'switcher.js',
 		service + 'latest.js'
 	).then(
 		ctrl + 'app-ctrl.js',

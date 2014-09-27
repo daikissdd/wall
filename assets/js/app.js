@@ -11,7 +11,7 @@ var App = angular.module('wall', [
 		templateUrl: 'assets/views/home.html',
 		controller: 'homeCtrl'
 	})
-	.when('/password', {
+	.when('/password/:code/', {
 		templateUrl: 'assets/views/password.html',
 		controller: 'passwordCtrl'
 	})
@@ -32,11 +32,4 @@ var App = angular.module('wall', [
 }).config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
     $httpProvider.defaults.useXDomain = true;
 }]);
-
-App.define = (function(define) {
-	return {
-		set: function(name, value) { return define[name] = value; },
-		get: function(name) { return define[name]; }
-	};
-})({});
 

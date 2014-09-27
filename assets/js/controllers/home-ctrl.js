@@ -1,7 +1,6 @@
-App.controller('homeCtrl', function($scope, $http, $location, Modal, Wall, Latest, storage, $modal) {
+App.controller('homeCtrl', function($scope, $http, $location, Modal, Wall, Latest, storage, $modal, Url) {
 
 	$scope.isCollapsed = true;
-
 	$scope.toggleCollapse = function($event) {
 		$scope.isCollapsed = !$scope.isCollapsed;
 	};
@@ -9,8 +8,7 @@ App.controller('homeCtrl', function($scope, $http, $location, Modal, Wall, Lates
 	$scope.open = Modal.forge('modal.html', 'modalCtrl');
 
 	$scope.linkCard = function($event, card) {
-		var path = $scope.app.appUrl({wall_code: card.wall_code});
-		$location.path(path).replace();
+		Url.app(card.wall_code).replace();
 	};
 
 	_.once(function() {

@@ -18,5 +18,4 @@ App.controller('modalCtrl', function($scope, $modalInstance, $http, $location, W
 			alert('error');
 		});
 	};
-
 });
