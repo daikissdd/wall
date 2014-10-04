@@ -24,6 +24,7 @@
 	).then(
 		bower + 'angular-bootstrap-validation/dist/angular-bootstrap-validation.js',
 		bower + 'angular-bootstrap-notifications/notifications.min.js',
+		bower + 'angular-busy/dist/angular-busy.min.js',
 		bower + 'angularLocalStorage/src/angularLocalStorage.js'
 	).then(
 		js + 'app.js'
@@ -33,6 +34,8 @@
 		directive + 'copyright.js',
 		directive + 'modalside.js',
 		service + 'url.js',
+		service + 'geturl.js',
+		service + 'product.js',
 		service + 'wall.js',
 		service + 'card.js',
 		service + 'mail.js',
@@ -41,14 +44,11 @@
 		service + 'latest.js'
 	).then(
 		ctrl + 'app-ctrl.js',
-		ctrl + 'password-ctrl.js'
-	).then(
-		ctrl + 'modal-ctrl.js'
-	).then(
-		ctrl + 'home-ctrl.js'
-	).then(
-		ctrl + 'wall-ctrl.js'
-	).then(
+		ctrl + 'password-ctrl.js',
+		ctrl + 'modal-ctrl.js',
+		ctrl + 'home-ctrl.js',
+		ctrl + 'wall-ctrl.js',
+		ctrl + 'admin-ctrl.js',
 		ctrl + 'card-ctrl.js'
 	).thenRun(function () {
 	   console.log('JS Loaded.');

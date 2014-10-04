@@ -27,7 +27,7 @@ App.factory('Wall', function($http) {
 			return $http.post(api.create, data);
 		},
 		get: function(code, callback) {
-			return $http.post(api.get+code)
+			return $http.get(api.get+code)
 			.success(function(res) {
 				callback(res);
 			})

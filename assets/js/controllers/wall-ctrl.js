@@ -1,4 +1,13 @@
-App.controller('wallCtrl', function($scope, $routeParams, Modal, Wall, Card, Latest, storage, Switcher, Url) {
+App.controller('wallCtrl', [
+	'$scope',
+	'$routeParams',
+	'Modal',
+	'Wall',
+	'Card',
+	'Latest',
+	'Switcher',
+	'Url',
+	function($scope, $routeParams, Modal, Wall, Card, Latest, Switcher, Url) {
 
 	if (!$routeParams.code) Url.home().replace();
 
@@ -35,6 +44,7 @@ App.controller('wallCtrl', function($scope, $routeParams, Modal, Wall, Card, Lat
 				return $scope.card;
 			}});
 		});
+
 	})();
 
 	$scope.navLinks = {home: Url.home().url()};
@@ -45,7 +55,7 @@ App.controller('wallCtrl', function($scope, $routeParams, Modal, Wall, Card, Lat
 	};
 
 	$scope.wallTitleEditSave = function() {
-		Wall.update($scope.wall.wall_code, $scope.wall, function(res) {
+		$scope.myPromise = Wall.update($scope.wall.wall_code, $scope.wall, function(res) {
 			console.log(res);
 		});
 		Latest.push($scope.wall);
@@ -59,4 +69,4 @@ App.controller('wallCtrl', function($scope, $routeParams, Modal, Wall, Card, Lat
 		});
 	};
 
-});
+}]);

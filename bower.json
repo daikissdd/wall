@@ -24,7 +24,8 @@
     "angularLocalStorage": "~0.1.7",
     "qunit": "~1.15.0",
     "qunit-theme-burce": "git@github.com:brycedorn/qunit-theme-burce.git",
-    "jquery.transit": "~0.9.12"
+    "jquery.transit": "~0.9.12",
+    "angular-busy": "~4.1.0"
   },
   "devDependencies": {}
 }

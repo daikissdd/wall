@@ -8,3 +8,22 @@
 	  opacity: .9;
 	}
 }
+
+@mixin placeholder($color, $size) {
+	&::-moz-placeholder {
+		color: $color;
+		font-size: $size;
+	}
+	&::-webkit-input-placeholder {
+		color: $color;
+		font-size: $size;
+	}
+	&::-ms-input-placeholder {
+		color: $color;
+		font-size: $size;
+	}
+	&::placeholder-shown {
+		color: $color;
+		font-size: $size;
+	}
+}

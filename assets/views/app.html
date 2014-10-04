@@ -1,5 +1,7 @@
 <div class="col-md-12" ng-include="'assets/html/card-modal.html'"></div>
 
+<div cg-busy="myPromise"></div>
+
 <div class="container-fluid app-nav">
 	<div class="row">
 
@@ -10,31 +12,25 @@
 				</span>
 				<span class="nav-text pointer">
 					<a ng-click="wallTitleEdit()" ng-hide="wallTitleEditFlag">{{wall.title}}</a>
-					<span ng-show="wallTitleEditFlag">
+					<form ng-submit="wallTitleEditSave()" ng-show="wallTitleEditFlag" role="form">
 						<input type="text" ng-model="wall.title" maxlength="22" />
-						<button ng-click="wallTitleEditSave()">Save</button>
-					</span>
+						<button>Save</button>
+					</form>
 				</span>
 			</div>
 		</div>
 
-		<div class="col-md-6">
-			<form>
-				<div class="input-group col-md-offset-1 col-md-9 input-group-sm">
-					<input type="url" class="form-control" placeholder="URL">
-					<span class="input-group-btn">
-						<button class="btn btn-primary">
-							<span class="glyphicon glyphicon-plus"></span>
-							<span>URL</span>
-						</button>
-					</span>
-				</div>
-			</form>
-			<div class="col-md-1" ng-click="createCard($event)">
-				<button class="btn">
+		<div class="col-md-6" align="right">
+			<form ng-submit="" role="form">
+				<span class="nav-text">
+					<input type="url" placeholder="http://example.com">
+					<button><span class="glyphicon glyphicon-plus"></span><span>URL</span></button>
+				</span>
+
+				<span class="nav-text pointer" ng-click="createCard($event)">
 					<span class="glyphicon glyphicon-plus"></span>
-				</button>
-			</div>
+				</span>
+			</form>
 		</div>
 
 	</div>

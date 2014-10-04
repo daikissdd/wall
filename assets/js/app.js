@@ -3,6 +3,7 @@ var App = angular.module('wall', [
 	'ngAnimate',
 	'ngCookies',
 	'angularLocalStorage',
+	'cgBusy',
 	'ui.bootstrap'
 ])
 .config(function($routeProvider, $locationProvider) {
@@ -23,13 +24,24 @@ var App = angular.module('wall', [
 		templateUrl: 'assets/views/app.html',
 		controller: 'wallCtrl'
 	})
+	.when('/admin/', {
+		templateUrl: 'assets/views/admin.html',
+		controller: 'adminCtrl'
+	})
 	.otherwise({
 		redirectTo: '/home'
 	});
 })
 .config(function($locationProvider) {
 	$locationProvider.html5Mode(false);
-}).config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
+})
+.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
     $httpProvider.defaults.useXDomain = true;
-}]);
+}])
+.value('cgBusyDefaults',{
+    message:'Now Loading...',
+    backdrop: true,
+    delay: 300,
+    minDuration: 700
+});
 
