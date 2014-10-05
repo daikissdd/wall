@@ -37,11 +37,13 @@ gulp.task('image', function () {
 });
 
 gulp.task('html', function () {
-	var rejs = new RegExp('assets/bower_components/loadjs/load-min.js');
+	var rejs = new RegExp('<script src="assets/bower_components/loadjs/load-min.js"></script><script src="gulpconfig.js"></script>');
 	var recss = new RegExp('<link rel="stylesheet" href="assets/css/bootstrap.css" /><link rel="stylesheet" href="assets/bower_components/angular-busy/dist/angular-busy.min.css" /><link rel="stylesheet" href="assets/css/main.css" />');
+	var env = new RegExp('%localhost%');
 	gulp.src('./index.html')
-	.pipe(replace(rejs, 'assets/js/load-min.js'))
+	.pipe(replace(rejs, '<script src="assets/js/all.js"></script>'))
 	.pipe(replace(recss, '<link rel="stylesheet" href="assets/css/all.css" />'))
+	.pipe(replace(env, 'production'))
 	.pipe(gulp.dest('dist'));
 });
 

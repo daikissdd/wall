@@ -14,24 +14,12 @@
 	<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" class="margin0">{{alert.msg}}</alert>
 	<div ng-view></div>
 	<footer ng-include="'assets/html/footer.html'"></footer>
-</body>
-</html>
-
-<script src="assets/js/load-min.js"></script>
-    <script src="gulpconfig.js"></script>
+	<script src="assets/js/all.js"></script>
     <script>
-	    var APP_ENV = function(env) {
-			var dev = {api: 'localhost', mode: 'development'};
-			var pro = {api: 'heroku', mode: 'production'};
-			if (env === 'production') return pro;
-			return dev;
-		};
-
+    	var APP_ENV = 'production';
 		(function() {
-			if (location.hostname.indexOf('localhost') === -1) {
-				load('assets/js/all.js').thenRun(function () {
-					console.log('JS All Loaded in Production.');
-				});
+			if (APP_ENV === 'production') {
+				console.log('JS All Loaded in ' + APP_ENV);
 				return;
 			}
 			var jsFiles = APP_JS_FILES.get();
@@ -42,7 +30,9 @@
 				d = d.then(jsFiles[i]);
 			}
 			d.thenRun(function () {
-			   console.log('JS All Loaded in Development.');
+			   console.log('JS All Loaded in ' + APP_ENV);
 			});
 		})();
     </script>
+</body>
+</html>
