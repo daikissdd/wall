@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 	replace = require('gulp-replace'),
 	config = require('./gulpconfig.js');
 
-var src = {img: 'assets/img', js: 'assets/js', css: 'assets/css'},
+var src = {img: 'assets/img', js: 'assets/js', css: 'assets/css', bower: 'assets/bower_components'},
 	dist = {img: 'dist/assets/img', js: 'dist/assets/js', css: 'dist/assets/css'},
 	jsfiles = config.get();
 
@@ -20,6 +20,7 @@ gulp.task('css', function() {
 	gulp.src([
 		src.css + '/bootstrap.css',
 		src.css + '/main.css',
+		src.css + '/angular-busy/dist/angular-busy.min.css'
 	])
 	.pipe(concat('all.css'))
 	.pipe(minifyCss())
@@ -36,9 +37,11 @@ gulp.task('image', function () {
 });
 
 gulp.task('html', function () {
-	var re = new RegExp('assets/bower_components/loadjs/load-min.js');
+	var rejs = new RegExp('assets/bower_components/loadjs/load-min.js');
+	var recss = new RegExp('<link rel="stylesheet" href="assets/css/bootstrap.css" /><link rel="stylesheet" href="assets/bower_components/angular-busy/dist/angular-busy.min.css" /><link rel="stylesheet" href="assets/css/main.css" />');
 	gulp.src('./index.html')
-	.pipe(replace(re, 'assets/js/load-min.js'))
+	.pipe(replace(rejs, 'assets/js/load-min.js'))
+	.pipe(replace(recss, '<link rel="stylesheet" href="assets/css/all.css" />'))
 	.pipe(gulp.dest('dist'));
 });
 
@@ -46,6 +49,9 @@ gulp.task('html', function () {
 gulp.task('copy', function() {
 	gulp.src('assets/bower_components/angular-touch/angular-touch.min.js.map').pipe(gulp.dest(dist.js));
 	gulp.src('assets/bower_components/loadjs/load-min.js').pipe(gulp.dest(dist.js));
+	gulp.src('assets/views/*').pipe(gulp.dest('dist/assets/views'));
+	gulp.src('assets/html/*').pipe(gulp.dest('dist/assets/html'));
+	gulp.src('assets/fonts/*').pipe(gulp.dest('dist/assets/fonts'));
 	gulp.src('gulpconfig.js').pipe(gulp.dest('dist'));
 });
 
