@@ -58,11 +58,14 @@ gulp.task('concat', function() {
 });
 
 gulp.task('copy', function() {
-	gulp.src(src.img + '/**').pipe(gulp.dest(dist.img));
-	gulp.src(src.css + '/**').pipe(gulp.dest(dist.css));
+	//gulp.src(src.img + '/**').pipe(gulp.dest(dist.img));
+	//gulp.src(src.css + '/**').pipe(gulp.dest(dist.css));
+	var copy = ['assets/bower_components/angular-touch/angular-touch.min.js.map'];
+	gulp.src(copy).pipe(gulp.dest(dist.js));
 });
 
 gulp.task('default', function() {
 	console.log('-- daikissdd -- gulp start!!');
 	gulp.run('concat');
+	gulp.run('copy');
 });
