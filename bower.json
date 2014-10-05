@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "dependencies": {
     "sass-bootstrap": "~3.0.0",
-    "modernizr": "~2.6.2",
     "jquery": "~2.1.*",
     "angular-ui-bootstrap-bower": "~0.11.0",
     "angular": "~1.2.20",
@@ -11,7 +10,6 @@
     "angular-wizard": "~0.4.0",
     "angular-touch": "~1.2.20",
     "angular-animate": "~1.2.20",
-    "requirejs": "~2.1.14",
     "loadjs": "git@github.com:chriso/load.js.git",
     "aws-sdk-js": "~2.0.8",
     "angular-bootstrap-validation": "~0.0.5",
