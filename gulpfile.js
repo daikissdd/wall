@@ -46,6 +46,7 @@ gulp.task('html', function () {
 gulp.task('copy', function() {
 	gulp.src('assets/bower_components/angular-touch/angular-touch.min.js.map').pipe(gulp.dest(dist.js));
 	gulp.src('assets/bower_components/loadjs/load-min.js').pipe(gulp.dest(dist.js));
+	gulp.src('gulpconfig.js').pipe(gulp.dest('dist'));
 });
 
 gulp.task('default', function() {
