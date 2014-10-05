@@ -3,5 +3,3 @@ node_modules
 .tmp
 .sass-cache
 font-awesome
-dist
-build

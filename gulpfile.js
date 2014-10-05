@@ -26,7 +26,7 @@ gulp.task('css', function() {
 });
 
 gulp.task('image', function () {
-  return gulp.src(src.img + '/**/*.{png,jpg,gif}')
+  return gulp.src(src.img + '/**/*.{png,jpg,gif,ico}')
     .pipe(imagemin({
 		progressive: true,
 		interlaced: true
@@ -35,11 +35,8 @@ gulp.task('image', function () {
 });
 
 gulp.task('copy', function() {
-	var copy = [
-		'assets/bower_components/angular-touch/angular-touch.min.js.map',
-		'index.html'
-	];
-	gulp.src(copy).pipe(gulp.dest(dist.js));
+	gulp.src('assets/bower_components/angular-touch/angular-touch.min.js.map').pipe(gulp.dest(dist.js));
+	gulp.src('./index.html').pipe(gulp.dest('dist'));
 });
 
 gulp.task('default', function() {
