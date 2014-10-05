@@ -42,7 +42,7 @@ gulp.task('html', function () {
 	var env = new RegExp('%localhost%');
 	gulp.src('./index.html')
 	.pipe(replace(rejs, '<script async src="assets/js/all.js"></script>'))
-	.pipe(replace(recss, '<link rel="stylesheet" href="assets/css/all.css" />'))
+	.pipe(replace(recss, ''))
 	.pipe(replace(env, 'production'))
 	.pipe(gulp.dest('dist'));
 });
