@@ -2,7 +2,8 @@ var gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	uglify = require('gulp-uglify'),
 	minifyCss = require('gulp-minify-css'),
-	imagemin = require('gulp-imagemin');
+	imagemin = require('gulp-imagemin'),
+	replace = require('gulp-replace'),
 	config = require('./gulpconfig.js');
 
 var src = {img: 'assets/img', js: 'assets/js', css: 'assets/css'},
@@ -34,9 +35,16 @@ gulp.task('image', function () {
     .pipe(gulp.dest(dist.img));
 });
 
+gulp.task('html', function () {
+	gulp.src('./index.html')
+		.pipe(replace(/assets\/bower_components\/loadjs\/load-min.js/i, 'assets/js/load-min.js'))
+		.pipe(gulp.dest('dist'));
+});
+
+
 gulp.task('copy', function() {
 	gulp.src('assets/bower_components/angular-touch/angular-touch.min.js.map').pipe(gulp.dest(dist.js));
-	gulp.src('./index.html').pipe(gulp.dest('dist'));
+	gulp.src('assets/bower_components/loadjs/load-min.js').pipe(gulp.dest(dist.js));
 });
 
 gulp.task('default', function() {
