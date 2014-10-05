@@ -41,8 +41,8 @@ gulp.task('html', function () {
 	var recss = new RegExp('<link rel="stylesheet" href="assets/css/bootstrap.css" /><link rel="stylesheet" href="assets/bower_components/angular-busy/dist/angular-busy.min.css" /><link rel="stylesheet" href="assets/css/main.css" />');
 	var env = new RegExp('%localhost%');
 	gulp.src('./index.html')
-	.pipe(replace(rejs, '<script src="assets/js/all.js"></script>'))
-	.pipe(replace(recss, '<link rel="stylesheet" href="assets/css/all.css" />'))
+	.pipe(replace(rejs, '<script src="assets/js/all.js" async="true"></script>'))
+	.pipe(replace(recss, '<link rel="stylesheet" href="assets/css/all.css" async="true" />'))
 	.pipe(replace(env, 'production'))
 	.pipe(gulp.dest('dist'));
 });
