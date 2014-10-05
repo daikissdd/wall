@@ -1,3 +1,10 @@
+var APPENV = function(env) {
+	var dev = {api: 'localhost', mode: 'development'};
+	var pro = {api: 'heroku', mode: 'production'};
+	if (env === 'production') return pro;
+	return dev;
+};
+
 (function() {
 
 	var bower = 'assets/bower_components/';
