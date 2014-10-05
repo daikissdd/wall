@@ -20,14 +20,6 @@
 		(function() {
 			if (APP_ENV === 'production') {
 				console.log('JS All Loaded in ' + APP_ENV);
-				(function(d){
-				    var c = d.createElement('link');
-				        c.type = 'text/css';
-				        c.rel  = 'stylesheet';
-				        c.href = 'assets/css/all.css';
-				    var s = d.getElementsByTagName('script')[0];
-				        s.parentNode.insertBefore(c, s);
-				})(document);
 				return;
 			}
 			var jsFiles = APP_JS_FILES.get();

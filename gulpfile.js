@@ -43,9 +43,8 @@ gulp.task('html', function () {
 	var env = new RegExp('%localhost%');
 	gulp.src('./index.html')
 	.pipe(replace(rejs, '<script async src="assets/js/all.js"></script>'))
-	.pipe(replace(recss, ''))
+	.pipe(replace(recss, '<link rel="stylesheet" href="assets/css/all.css" />'))
 	.pipe(replace(env, 'production'))
-	.pipe(minifyHTML())
 	.pipe(gulp.dest('dist'));
 });
 
@@ -54,15 +53,9 @@ gulp.task('copy', function() {
 	gulp.src('assets/bower_components/angular-touch/angular-touch.min.js.map').pipe(gulp.dest(dist.js));
 	gulp.src('assets/bower_components/loadjs/load-min.js').pipe(gulp.dest(dist.js));
 	gulp.src('assets/fonts/*').pipe(gulp.dest('dist/assets/fonts'));
-	gulp.src('assets/views/*')
-		.pipe(minifyHTML())
-		.pipe(gulp.dest('dist/assets/views'));
-	gulp.src('assets/html/*')
-		.pipe(minifyHTML())
-		.pipe(gulp.dest('dist/assets/html'));
-	gulp.src('gulpconfig.js')
-		.pipe(uglify())
-		.pipe(gulp.dest('dist'));
+	gulp.src('assets/views/*').pipe(gulp.dest('dist/assets/views'));
+	gulp.src('assets/html/*').pipe(gulp.dest('dist/assets/html'));
+	gulp.src('gulpconfig.js').pipe(uglify()).pipe(gulp.dest('dist'));
 });
 
 gulp.task('default', function() {
