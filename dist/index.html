@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja" ng-app="wall">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Wall URLクラウドノート</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    
-</head>
-
-<body ng-controller="appCtrl" ng-cloak>
-	<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" class="margin0">{{alert.msg}}</alert>
-	<div ng-view></div>
-	<footer ng-include="'assets/html/footer.html'"></footer>
-	<script async src="assets/js/all.js"></script>
-    <script>
+<!DOCTYPE html><html lang=ja ng-app=wall><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>Wall URLクラウドノート</title><meta name=viewport content="width=device-width, initial-scale=1.0"><meta name=description><meta name=author></head><body ng-controller=appCtrl><alert ng-repeat="alert in alerts" type={{alert.type}} close=closeAlert($index) class=margin0>{{alert.msg}}</alert><div></div><footer ng-include="'assets/html/footer.html'"></footer><script async src=assets/js/all.js></script><script>
     	var APP_ENV = 'production';
 		(function() {
 			if (APP_ENV === 'production') {
@@ -41,6 +24,4 @@
 			   console.log('JS All Loaded in ' + APP_ENV);
 			});
 		})();
-    </script>
-</body>
-</html>
+    </script></body></html>
