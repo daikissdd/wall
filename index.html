@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app="wall">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Wall URLクラウドノート</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/bower_components/angular-busy/dist/angular-busy.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body ng-controller="appCtrl" ng-cloak>
+	<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" class="margin0">{{alert.msg}}</alert>
+	<div ng-view></div>
+	<footer ng-include="'assets/html/footer.html'"></footer>
+
+    <script src="assets/bower_components/loadjs/load-min.js"></script>
+    <script src="gulpconfig.js"></script>
+    <script>
+	    var APP_ENV = function(env) {
+			var dev = {api: 'localhost', mode: 'development'};
+			var pro = {api: 'heroku', mode: 'production'};
+			if (env === 'production') return pro;
+			return dev;
+		};
+
+		(function() {
+			if (location.hostname.indexOf('localhost') === -1) {
+				load(distjs).thenRun(function () {
+					console.log('JS All Loaded in Production.');
+				});
+				return;
+			}
+			var jsFiles = APP_JS_FILES.get();
+			var d = {};
+			for (var i = 0; i < jsFiles.length; i++) {
+				console.log(jsFiles[i] + ' Loaded');
+				if (i === 0) d = load(jsFiles[i]);
+				d = d.then(jsFiles[i]);
+			}
+			d.thenRun(function () {
+			   console.log('JS All Loaded in Development.');
+			});
+		})();
+    </script>
+</body>
+</html>
