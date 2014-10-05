@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 	config = require('./gulpconfig.js');
 
 var src = {img: 'assets/img', js: 'assets/js', css: 'assets/css'},
-	dist = {img: 'assets/dist/assets/img', js: 'assets/dist/assets/js', css: 'assets/dist/assets/css'},
+	dist = {img: 'dist/assets/img', js: 'dist/assets/js', css: 'dist/assets/css'},
 	jsfiles = config.get();
 
 gulp.task('js', function() {
@@ -35,7 +35,10 @@ gulp.task('image', function () {
 });
 
 gulp.task('copy', function() {
-	var copy = ['assets/bower_components/angular-touch/angular-touch.min.js.map'];
+	var copy = [
+		'assets/bower_components/angular-touch/angular-touch.min.js.map',
+		'index.html'
+	];
 	gulp.src(copy).pipe(gulp.dest(dist.js));
 });
 
