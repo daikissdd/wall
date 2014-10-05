@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="stylesheet" href="assets/css/all.css" async="true" />
+    <link rel="stylesheet" href="assets/css/all.css" />
 </head>
 
 <body ng-controller="appCtrl" ng-cloak>
 	<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" class="margin0">{{alert.msg}}</alert>
 	<div ng-view></div>
 	<footer ng-include="'assets/html/footer.html'"></footer>
-	<script src="assets/js/all.js" async="true"></script>
+	<script src="assets/js/all.js"></script>
     <script>
     	var APP_ENV = 'production';
 		(function() {
