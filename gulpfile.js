@@ -36,9 +36,10 @@ gulp.task('image', function () {
 });
 
 gulp.task('html', function () {
+	var re = new RegExp('assets/bower_components/loadjs/load-min.js');
 	gulp.src('./index.html')
-		.pipe(replace(/assets\/bower_components\/loadjs\/load-min.js/i, 'assets/js/load-min.js'))
-		.pipe(gulp.dest('dist'));
+	.pipe(replace(re, 'assets/js/load-min.js'))
+	.pipe(gulp.dest('dist'));
 });
 
 
@@ -54,4 +55,5 @@ gulp.task('default', function() {
 	gulp.run('css');
 	gulp.run('copy');
 	gulp.run('image');
+	gulp.run('html');
 });
